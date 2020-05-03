@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "tacoman",
+        "image": "../images/tacoman.jpg"
+    },
+    {
+        "id":1,
+        "name": "tacowoman",
+        "image": "../images/tacowman.jpg"
+    },
+]

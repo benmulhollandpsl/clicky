@@ -1,6 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import picturecards from "./picturecards.json";
+// import index from "./index"; 
+
+// picturecards state {
+// [] 
+// score?
+// alert?
+// }
 
 function App() {
   return (
