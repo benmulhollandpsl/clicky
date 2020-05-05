@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js start
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add @material-ui/core/BottomNavigation
 
 PATH: 
   /usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/mysql/bin
@@ -14,15 +14,21 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/benjaminmulholland/Desktop/homeworks/clicky/package.json: Unexpected token } in JSON at position 554
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/@material-ui%2fcore/BottomNavigation: Request "https://registry.yarnpkg.com/@material-ui%2fcore/BottomNavigation" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66996:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141720:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1183:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
+    "homepage": "https://benmulhollandpsl.github.io/clicky",
     "name": "clicky",
     "version": "0.1.0",
     "private": true,
@@ -38,10 +44,12 @@ npm manifest:
       "react-scripts": "3.4.1"
     },
     "scripts": {
-         "predeploy": "npm run build",
-         "deploy": "gh-pages -d build",
-          "start": "react-scripts start",
-          "build": "react-scripts build",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build",
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
     },
     "eslintConfig": {
       "extends": "react-app"
@@ -58,7 +66,9 @@ npm manifest:
         "last 1 safari version"
       ]
     },
-    "homepage": "https://benmulhollandpsl.github.io/clicky/",
+    "devDependencies": {
+      "gh-pages": "^2.2.0"
+    }
   }
 
 yarn manifest: 
