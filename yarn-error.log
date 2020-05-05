@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add gh-pages
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js start
 
 PATH: 
   /usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/mysql/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/benjaminmulholland/Desktop/homeworks/clicky/package.json: Unexpected token } in JSON at position 884
+  SyntaxError: /Users/benjaminmulholland/Desktop/homeworks/clicky/package.json: Unexpected token } in JSON at position 554
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -38,10 +38,10 @@ npm manifest:
       "react-scripts": "3.4.1"
     },
     "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
+         "predeploy": "npm run build",
+         "deploy": "gh-pages -d build",
+          "start": "react-scripts start",
+          "build": "react-scripts build",
     },
     "eslintConfig": {
       "extends": "react-app"
