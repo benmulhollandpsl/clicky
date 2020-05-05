@@ -2,7 +2,8 @@
     {
         "id": 1,
         "name": "tacoman",
-        "image": "./imgs/tacoman.jpg"
+        "image": "./imgs/tacoman.jpg",
+        "clicked": false
     },
     {
         "id": 2,
