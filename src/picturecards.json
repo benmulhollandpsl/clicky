@@ -8,57 +8,68 @@
     {
         "id": 2,
         "name": "tacowoman",
-        "image": "./imgs/tacowman.jpg"
+        "image": "./imgs/tacowman.jpg",
+        "clicked": false
     },
     {
         "id": 3,
         "name": "tacofriend",
-        "image": "./imgs/tacofriend.jpg"
+        "image": "./imgs/tacofriend.jpg",
+        "clicked": false
     },
     {
         "id": 4,
         "name": "tacotopper",
-        "image": "./imgs/tacotopper.jpg"
+        "image": "./imgs/tacotopper.jpg",
+        "clicked": false
     },
     {
         "id": 5,
         "name": "tortilla the hut",
-        "image": "./imgs/tortillathehut.jpg"
+        "image": "./imgs/tortillathehut.jpg",
+        "clicked": false
     },
     {
         "id": 6,
         "name": "tacodoggo",
-        "image": "./imgs/tacodoggo.jpg"
+        "image": "./imgs/tacodoggo.jpg",
+        "clicked": false
     },
     {
         "id": 7,
         "name": "tacocat",
-        "image": "./imgs/tacocat.jpg"
+        "image": "./imgs/tacocat.jpg",
+        "clicked": false
     },
     {
         "id": 8,
         "name": "William",
-        "image": "./imgs/William.jpg"
+        "image": "./imgs/William.jpg",
+        "clicked": false
     },
     {
         "id": 9,
         "name": "verdi",
-        "image": "./imgs/verdi.jpg"
+        "image": "./imgs/verdi.jpg",
+        "clicked": false
     },
     {
         "id": 10,
         "name": "pico de fabuloso",
-        "image": "./imgs/picodefabulouso.jpg"
+        "image": "./imgs/picodefabulouso.jpg",
+        "clicked": false
     },
     {
         "id": 11,
         "name": "vegan style",
-        "image": "./imgs/veganstyle.jpg"
+        "image": "./imgs/veganstyle.jpg",
+        "clicked": false
     },
     {
         "id": 12,
         "name": "Phoebe",
-        "image": "./imgs/phoebe.jpg"
+        "image": "./imgs/phoebe.jpg",
+        "clicked": false
     }
 
 ]
