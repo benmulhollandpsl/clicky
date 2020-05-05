@@ -1,6 +1,12 @@
 # clicky-game
 memory game using React
 
+
+
+all art created by myself using piskelapp.com
+
+
+
 ### Goals:
  * Begin by building a non-functioning static version for your Clicky Game. Then work on making the game interactive.
 
