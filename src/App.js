@@ -7,7 +7,9 @@ import Alert from "./components/Alert";
 import NavBar from "./components/NavBar";
 import BottomNavMDC from "./components/BottomNavMDC";
 import picturecards from "./picturecards.json";
+// import images from "../public/imgs";
 
+// images;
 class App extends Component {
 
   state = {
