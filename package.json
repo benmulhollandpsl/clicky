@@ -40,5 +40,16 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
+  },
+  "description": "`clicky` is a memory game built using React.  The objective is to not select the same picture more than once in a round.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benmulhollandpsl/clicky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benmulhollandpsl/clicky/issues"
   }
 }
