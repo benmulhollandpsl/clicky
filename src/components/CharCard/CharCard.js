@@ -1,13 +1,14 @@
 import React from "react";
 import "./CharCard.css";
+import "../../picturecards";
 
 const CharCard = ({ id, name, image, handlePicked }) => (
-    <div className="card"
+    <div className="card profileImage"
     key={id}
     data-id={id}
     name={name}
     onClick={handlePicked}>
-        <img src= {image} alt= {name}/>
+        <img className="profileImage" src= {image} alt= {name}/>
         
     </div>
 )

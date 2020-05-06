@@ -6,7 +6,7 @@ import Score from "./components/Score";
 import Alert from "./components/Alert";
 import NavBar from "./components/NavBar";
 import BottomNavMDC from "./components/BottomNavMDC";
-import picturecards from "./picturecards.json";
+import picturecards from "./picturecards.js";
 // import images from "../public/imgs";
 
 // images;
@@ -19,10 +19,12 @@ class App extends Component {
     alertMessage: ""
   }
 
-  handlePicked = event => {
-
-    const name = event.target.attributes.getNamedItem("name").value;
+  handlePicked(event){
+    console.log(event)
+    // acces this event to find the value 
+    const name = event.target.getAttribute("./");
     this.shufflePicturecards()
+    console.log(name)
     this.checkGuess(name, this.updateTopScore)
   }
 
@@ -45,7 +47,7 @@ class App extends Component {
   checkGuess = (name, cb) => {
     const newState = { ...this.state };
     if (newState.pickedChars.includes(name)) {
-      newState.alertMessage = `YOU ALREADY PICKED "${name.toUpperCase()}"!`
+      newState.alertMessage = `YOU ALREADY PICKED ${ name }!`
       newState.pickedChars = []
       this.setState(newState)
     } else {
@@ -53,7 +55,7 @@ class App extends Component {
       newState.alertMessage = `GOOD CHOICE!`
       this.setState(newState)
     }
-    // cb(newState, this.alertWinner)
+    cb(newState, this.alertWinner)
   }
 
   updateTopScore = (newState, cb) => {
@@ -113,10 +115,12 @@ class App extends Component {
             <CharCard
               id={char.id}
               name={char.name}
+              value={char.name}
               image={char.image}
               key={char.id}
-              handlePicked={this.handlePicked}
+              handlePicked={(e) => this.handlePicked(e)}
             />
+            console.log(name)
             </GridMDC>
           ))}
         </GridMDC>
