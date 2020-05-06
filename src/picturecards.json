@@ -2,13 +2,13 @@
     {
         "id": 1,
         "name": "tacoman",
-        "image": "./imgs/tacoman.jpg",
+        "image": "../public/imgs/tacoman.jpg",
         "clicked": false
     },
     {
         "id": 2,
         "name": "tacowoman",
-        "image": "./imgs/tacowman.jpg",
+        "image": "imgs/tacowman.jpg",
         "clicked": false
     },
     {

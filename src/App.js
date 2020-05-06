@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   shufflePicturecards = () => {
-    this.setState(this.state.picturecards = this.shuffleArray(this.state.picturecards))
+    this.setState({picturecards: this.shuffleArray(this.state.picturecards)})
     
   }
 
@@ -47,19 +47,19 @@ class App extends Component {
     if (newState.pickedChars.includes(name)) {
       newState.alertMessage = `YOU ALREADY PICKED "${name.toUpperCase()}"!`
       newState.pickedChars = []
-      this.setState(this.state = newState)
+      this.setState(newState)
     } else {
       newState.pickedChars.push(name)
       newState.alertMessage = `GOOD CHOICE!`
-      this.setState(this.state = newState)
+      this.setState(newState)
     }
-    cb(newState, this.alertWinner)
+    // cb(newState, this.alertWinner)
   }
 
   updateTopScore = (newState, cb) => {
     if (newState.pickedChars.length > newState.topScore) {
       newState.topScore++
-      this.setState(this.state = newState)
+      this.setState(newState)
     }
     cb(newState)
   }
@@ -68,7 +68,7 @@ class App extends Component {
     if (newState.pickedChars.length === 12) {
       newState.alertMessage = "CHAMPION!";
       newState.pickedChars = [];
-      this.setState(this.state = newState)
+      this.setState(newState)
     }
   }
 
