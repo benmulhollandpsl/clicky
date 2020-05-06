@@ -2,13 +2,13 @@
     {
         "id": 1,
         "name": "tacoman",
-        "image": "../public/imgs/tacoman.jpg",
+        "image": "./imgs/tacoman.jpg",
         "clicked": false
     },
     {
         "id": 2,
         "name": "tacowoman",
-        "image": "imgs/tacowman.jpg",
+        "image": "./imgs/tacowman.jpg",
         "clicked": false
     },
     {
@@ -20,13 +20,13 @@
     {
         "id": 4,
         "name": "tacotopper",
-        "image": "./imgs/tacotopper.jpg",
+        "image": ".imgs/tacotopper.jpg",
         "clicked": false
     },
     {
         "id": 5,
         "name": "tortilla the hut",
-        "image": "./imgs/tortillathehut.jpg",
+        "image": ".imgs/tortillathehut.jpg",
         "clicked": false
     },
     {
