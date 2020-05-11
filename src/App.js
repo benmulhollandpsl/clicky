@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GridMDC from "./components/GridMDC";
 import PaperMDC from "./components/PaperMDC";
-import CharCard from "./components/CharCard";
+import PictureFrame from "./components/PictureFrame";
 import Score from "./components/Score";
 import Alert from "./components/Alert";
 import NavBar from "./components/NavBar";
@@ -21,10 +21,9 @@ class App extends Component {
 
   handlePicked(event){
     console.log(event)
-    // acces this event to find the value 
     const name = event.target.getAttribute("./");
     this.shufflePicturecards()
-    console.log(name)
+
     this.checkGuess(name, this.updateTopScore)
   }
 
@@ -55,7 +54,7 @@ class App extends Component {
       newState.alertMessage = `GOOD CHOICE!`
       this.setState(newState)
     }
-    cb(newState, this.alertWinner)
+    cb(newState, this.alertWon)
   }
 
   updateTopScore = (newState, cb) => {
@@ -66,9 +65,9 @@ class App extends Component {
     cb(newState)
   }
 
-  alertWinner = (newState) => {
+  alertWon = (newState) => {
     if (newState.pickedChars.length === 12) {
-      newState.alertMessage = "CHAMPION!";
+      newState.alertMessage = "you won";
       newState.pickedChars = [];
       this.setState(newState)
     }
@@ -112,7 +111,7 @@ class App extends Component {
         <GridMDC container spacing={24} justify="center" style={{ maxWidth: 945, margin: "0 auto" }}>
           {this.state.picturecards.map(char => (
             <GridMDC item lg={3} md={3} sm={4} xs={6}>
-            <CharCard
+            <PictureFrame
               id={char.id}
               name={char.name}
               value={char.name}
@@ -120,7 +119,6 @@ class App extends Component {
               key={char.id}
               handlePicked={(e) => this.handlePicked(e)}
             />
-            console.log(name)
             </GridMDC>
           ))}
         </GridMDC>

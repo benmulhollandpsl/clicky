@@ -1,8 +1,8 @@
 import React from "react";
-import "./CharCard.css";
+import "./PictureFrame.css";
 import "../../picturecards";
 
-const CharCard = ({ id, name, image, handlePicked }) => (
+const PictureFrame = ({ id, name, image, handlePicked }) => (
     <div className="card profileImage"
     key={id}
     data-id={id}
@@ -13,4 +13,4 @@ const CharCard = ({ id, name, image, handlePicked }) => (
     </div>
 )
 
-export default CharCard;
+export default PictureFrame;

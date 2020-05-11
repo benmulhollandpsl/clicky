@@ -1,7 +1,7 @@
 .default {
-    font-family: 'Gloria Hallelujah', cursive, 'Comfortaa', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    font-size: 2rem;
-    color: black;
+    font-family: 'Gloria Hallelujah', cursive, sans-serif;
+    font-size: 3rem;
+    color: rebeccapurple;
     text-align: center;
     padding: 10px;
 }
