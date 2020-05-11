@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import GridMDC from "./components/GridMDC";
-import PaperMDC from "./components/PaperMDC";
-import PictureFrame from "./components/PictureFrame";
-import Score from "./components/Score";
-import Alert from "./components/Alert";
-import NavBar from "./components/NavBar";
-import BottomNavMDC from "./components/BottomNavMDC";
+import GridMDC from "./components";
+import PaperMDC from "./components";
+import PictureFrame from "./components";
+import Score from "./components";
+import Start from "./components";
+import NavBar from "./components";
+import BottomNavMDC from "./components";
 import picturecards from "./picturecards.js";
-// import images from "../public/imgs";
 
-// images;
+
+
 class App extends Component {
 
   state = {
@@ -83,9 +83,9 @@ class App extends Component {
           <GridMDC item lg={12}>
             <PaperMDC>
               {this.state.alertMessage === "GOOD CHOICE!" ? (
-                <Alert message={this.state.alertMessage} style={{ color: "green" }} />
+                <Start message={this.state.alertMessage} style={{ color: "green" }} />
               ) : (
-                  <Alert message={this.state.alertMessage} style={{ color: "red" }} />
+                  <Start message={this.state.alertMessage} style={{ color: "red" }} />
                 )}
             </PaperMDC>
           </GridMDC>
