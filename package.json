@@ -10,8 +10,10 @@
     "@testing-library/user-event": "^7.1.2",
     "app": "^0.1.0",
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "path": "^0.12.7",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },

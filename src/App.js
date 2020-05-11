@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import GridMDC from "./components";
-import PaperMDC from "./components";
-import PictureFrame from "./components";
-import Score from "./components";
-import Start from "./components";
-import NavBar from "./components";
-import BottomNavMDC from "./components";
-import picturecards from "./picturecards.js";
+import ColumnGrid from "./components/ColumnGrid";
+import BottomNavMDC from "./components/BottomNavMDC";
+import InlayGrid from "./components/InlayGrid";
+import PictureFrame from "./components/PictureFrame";
+import Score from "./components/Score";
+import Start from "./components/Start";
+import NavBar from "./components/NavBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import picturecards from "./picturecards";
+// import images from "../public/imgs";
 
-
+// images;
 class App extends Component {
 
   state = {
     picturecards: picturecards,
-    pickedChars: [],
+    pickedChars: picturecards,
     topScore: 0,
     alertMessage: ""
   }
@@ -24,7 +26,7 @@ class App extends Component {
     const name = event.target.getAttribute("./");
     this.shufflePicturecards()
 
-    this.checkGuess(name, this.updateTopScore)
+    this.checkGuess( name,this.updateTopScore)
   }
 
   shufflePicturecards = () => {
@@ -76,54 +78,53 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar style={{ background: "#313133", marginBottom: "5px" }} />
+        <NavBar style={{ background: "rebeccapurple", marginBottom: "30x" }} />
 
-        <GridMDC container direction="column" style={{ margin: "0 auto", maxWidth: 945 }}>
+        <ColumnGrid container direction="column" style={{ margin: "auto auto", maxWidth: 900 }}>
 
-          <GridMDC item lg={12}>
-            <PaperMDC>
-              {this.state.alertMessage === "GOOD CHOICE!" ? (
+          <ColumnGrid item lg={12}>
+            <InlayGrid>
+              {this.state.alertMessage === "So far so good!" ? (
                 <Start message={this.state.alertMessage} style={{ color: "green" }} />
               ) : (
                   <Start message={this.state.alertMessage} style={{ color: "red" }} />
                 )}
-            </PaperMDC>
-          </GridMDC>
+            </InlayGrid>
+          </ColumnGrid>
 
-          <GridMDC container justify="space-between">
+          <ColumnGrid container justify=" ">
 
-            <GridMDC item lg={6} md={6} sm={12} xs={12}>
-              <PaperMDC>
+            <ColumnGrid item lg={4} md={6} sm={12} xs={12}>
+              <InlayGrid>
                 <Score type="Score" score={this.state.pickedChars.length} />
-              </PaperMDC>
-            </GridMDC>
+              </InlayGrid>
+            </ColumnGrid>
 
-            <GridMDC item lg={6} md={6} sm={12} xs={12}>
-              <PaperMDC>
+            <ColumnGrid item lg={6} md={6} sm={12} xs={12}>
+              <InlayGrid>
                 <Score type="Top Score" score={this.state.topScore} />
-              </PaperMDC>
-            </GridMDC>
+              </InlayGrid>
+            </ColumnGrid>
 
-          </GridMDC>
+          </ColumnGrid>
 
-        </GridMDC>
+        </ColumnGrid>
 
-        <GridMDC container spacing={24} justify="center" style={{ maxWidth: 945, margin: "0 auto" }}>
+        <ColumnGrid container spacing={24} justify="center" style={{ maxWidth: 945, margin: "0 auto" }}>
           {this.state.picturecards.map(char => (
-            <GridMDC item lg={3} md={3} sm={4} xs={6}>
+            <ColumnGrid item lg={3} md={3} sm={4} xs={6}>
             <PictureFrame
               id={char.id}
               name={char.name}
-              value={char.name}
               image={char.image}
               key={char.id}
               handlePicked={(e) => this.handlePicked(e)}
             />
-            </GridMDC>
+            </ColumnGrid>
           ))}
-        </GridMDC>
-        <BottomNavMDC style={{ background: "#313133", marginTop: "17.5px", paddingTop: "15px", borderTop: "2.5px solid slategray" }}>
-          <a href="https://github.com/benmulhollandpsl/clicky" target="_blank" rel="noopener noreferrer" className="link" alt="clicky-github-link"><i className="fa fa-github fa-2x"></i></a>
+        </ColumnGrid>
+        <BottomNavMDC style={{ background: "cyan", marginTop: "17.5px", paddingTop: "15px", borderTop: "2.5px solid rebeccapurple" }}>
+          <a href="https://github.com/benmulhollandpsl/clicky" target="_blank" rel="noopener noreferrer" className="link" alt="clicky-github-link"><i class="fab fa-github"></i></a>
         </BottomNavMDC>
 
       </div>
