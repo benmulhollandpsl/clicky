@@ -1,11 +1,11 @@
 import React from "react";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
-import "./BottomNavMDC.css"
+import "./FooterNav.css"
 
-const BottomNavMDC = props => (
+const FooterNav = props => (
     <BottomNavigation {...props}>
         {props.children}
     </BottomNavigation>
 )
 
-export default BottomNavMDC;
+export default FooterNav;

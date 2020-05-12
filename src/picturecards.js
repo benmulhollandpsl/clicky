@@ -1,15 +1,15 @@
-let image1 = require("./imgs/tacoman.jpg")
-let image2 = require("./imgs/tacowman.jpg") 
-let image3 = require("./imgs/tacofriend.jpg")
-let image4 = require("./imgs/tacotopper.jpg")
-let image5 = require("./imgs/tortillathehut.jpg")
-let image6 = require("./imgs/tacodoggo.jpg")
-let image7 = require("./imgs/tacocat.jpg")
-let image8 = require("./imgs/William.jpg")
-let image9 = require("./imgs/verdi.jpg")
-let image10 = require("./imgs/picodefabulouso.jpg")
-let image11 = require("./imgs/veganstyle.jpg")
-let image12 = require("./imgs/phoebe.jpg")
+let image1 = require("./imgs/tacoman.png")
+let image2 = require("./imgs/tacowman.png") 
+let image3 = require("./imgs/tacofriend.png")
+let image4 = require("./imgs/tacotopper.png")
+let image5 = require("./imgs/tortillathehut.png")
+let image6 = require("./imgs/tacodoggo.png")
+let image7 = require("./imgs/tacocat.png")
+let image8 = require("./imgs/William.png")
+let image9 = require("./imgs/verdi.png")
+let image10 = require("./imgs/picodefabulouso.png")
+let image11 = require("./imgs/veganstyle.png")
+let image12 = require("./imgs/phoebe.png")
 
 
 
@@ -20,7 +20,7 @@ let image12 = require("./imgs/phoebe.jpg")
 // export is already set up to app.js line 9 
 
 
-let data =[
+let picturecards =[
     {
         "id": 1,
         "name": "tacoman",
@@ -96,4 +96,4 @@ let data =[
 
 ]
 
-module.exports = data
+module.exports = picturecards

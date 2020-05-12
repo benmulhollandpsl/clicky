@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Gloria Hallelujah', cursive, sans-serif;
   background-color: cyan;
+  background-image: linear-gradient(yellow, cyan);
 }
 
 code {

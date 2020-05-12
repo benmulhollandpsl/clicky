@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ColumnGrid from "./components/ColumnGrid";
-import BottomNavMDC from "./components/BottomNavMDC";
+import FooterNav from "./components/FooterNav";
 import InlayGrid from "./components/InlayGrid";
 import PictureFrame from "./components/PictureFrame";
 import Score from "./components/Score";
 import Start from "./components/Start";
 import NavBar from "./components/NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import picturecards from "./picturecards";
 // import images from "../public/imgs";
@@ -16,7 +16,7 @@ class App extends Component {
 
   state = {
     picturecards: picturecards,
-    pickedChars: picturecards,
+    pickedChars: [],
     topScore: 0,
     alertMessage: ""
   }
@@ -48,12 +48,12 @@ class App extends Component {
   checkGuess = (name, cb) => {
     const newState = { ...this.state };
     if (newState.pickedChars.includes(name)) {
-      newState.alertMessage = `YOU ALREADY PICKED ${ name }!`
+      newState.alertMessage = `you picked ${ name } a 2nd time!`
       newState.pickedChars = []
       this.setState(newState)
     } else {
       newState.pickedChars.push(name)
-      newState.alertMessage = `GOOD CHOICE!`
+      newState.alertMessage = `Keep going!`
       this.setState(newState)
     }
     cb(newState, this.alertWon)
@@ -75,12 +75,17 @@ class App extends Component {
     }
   }
 
+
+ 
+
+
+
   render() {
     return (
       <div>
-        <NavBar style={{ background: "rebeccapurple", marginBottom: "30x" }} />
+        <NavBar style={{ background: "rebeccapurple", marginBottom: "300px" }} />
 
-        <ColumnGrid container direction="column" style={{ margin: "auto auto", maxWidth: 900 }}>
+        <ColumnGrid container direction="column" style={{ margin: "auto auto", maxWidth: 1200 }}>
 
           <ColumnGrid item lg={12}>
             <InlayGrid>
@@ -94,7 +99,7 @@ class App extends Component {
 
           <ColumnGrid container justify=" ">
 
-            <ColumnGrid item lg={4} md={6} sm={12} xs={12}>
+            <ColumnGrid item lg={12} md={6} sm={3} xs={12}>
               <InlayGrid>
                 <Score type="Score" score={this.state.pickedChars.length} />
               </InlayGrid>
@@ -110,9 +115,9 @@ class App extends Component {
 
         </ColumnGrid>
 
-        <ColumnGrid container spacing={24} justify="center" style={{ maxWidth: 945, margin: "0 auto" }}>
+        <ColumnGrid container spacing={4} justify="center" style={{ maxWidth: 945, margin: "0 auto" }}>
           {this.state.picturecards.map(char => (
-            <ColumnGrid item lg={3} md={3} sm={4} xs={6}>
+            <ColumnGrid item lg={3} md={3} sm={4} xs={12}>
             <PictureFrame
               id={char.id}
               name={char.name}
@@ -123,13 +128,13 @@ class App extends Component {
             </ColumnGrid>
           ))}
         </ColumnGrid>
-        <BottomNavMDC style={{ background: "cyan", marginTop: "17.5px", paddingTop: "15px", borderTop: "2.5px solid rebeccapurple" }}>
+        <FooterNav style={{ background: "cyan", marginTop: "17.5px", paddingTop: "15px", borderTop: "2.5px solid rebeccapurple" }}>
           <a href="https://github.com/benmulhollandpsl/clicky" target="_blank" rel="noopener noreferrer" className="link" alt="clicky-github-link"><i class="fab fa-github"></i></a>
-        </BottomNavMDC>
+         </FooterNav>
 
       </div>
-    )
+        )
+      }
   }
-}
 
 export default App;
