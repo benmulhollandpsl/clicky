@@ -100,9 +100,9 @@ class App extends Component {
           <ColumnGrid item lg={12}>
             <InlayGrid>
               {this.state.alertMessage === "So far so good!" ? (
-                <Start message={this.state.alertMessage} style={{ color: "green" }} />
+                <Start message={this.state.alertMessage} style={{ color: "cyan" }} />
               ) : (
-                  <Start message={this.state.alertMessage} style={{ color: "red" }} />
+                  <Start message={this.state.alertMessage} style={{ color: "yellow" }} />
                 )}
             </InlayGrid>
           </ColumnGrid>
