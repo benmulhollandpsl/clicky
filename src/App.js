@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   shuffleArray = (a, b) => Math.random() > .5 ? -1 : 1
+  //new shuffle array start
 
   handlePicked = (event) => {
 //getNamedItem method returns the attribute node with the specified name from the current attributes collection
@@ -42,7 +43,8 @@ class App extends Component {
     this.setState(
       {
         picturecards: this.shuffleArray(this.state.pickedChars)
-      }
+      },
+      console.log(picturecards)
       )
     
   }
@@ -79,7 +81,7 @@ class App extends Component {
     if (newState.pickedChars.length === 12) {
       newState.alertMessage = "you won";
       newState.pickedChars = [];
-      this.setState(this.state = newState)
+      this.setState = newState
     }
   }
 
@@ -130,7 +132,7 @@ class App extends Component {
               id={char.id}
               name={char.name}
               image={char.image}
-              key={char.id}
+              clicked={char.clicked}
               handlePicked={this.handlePicked}
             />
             </ColumnGrid>
