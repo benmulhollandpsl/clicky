@@ -8,7 +8,7 @@ const PictureFrame = ({ id, name, image, handlePicked }) => (
     data-id={id}
     name={name}
     onClick={handlePicked}>
-        <img className="profileImage" src= {image} alt= {name}/>
+        <img className="profileImage" src= {image} title = {name} alt= {name}/>
         
     </div>
 )

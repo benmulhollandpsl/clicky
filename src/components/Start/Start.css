@@ -39,11 +39,6 @@
     box-shadow: 0 30px 28px rebeccapurple, 0 10px 10px rebeccapurple;
 }
 
-.profileImage{
-    width: 100%;
-    height: auto;
-  }
-  
 
 @media (max-width: 960px) {
     .default {
@@ -55,13 +50,4 @@
     .default {
         font-size: 1.2rem;
     } 
-}
-
-@media content-boxes-spin {
-    from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
 }

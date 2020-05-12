@@ -2,67 +2,75 @@ import React, { Component } from 'react';
 import ColumnGrid from "./components/ColumnGrid";
 import FooterNav from "./components/FooterNav";
 import InlayGrid from "./components/InlayGrid";
-import PictureFrame from "./components/PictureFrame";
-import Score from "./components/Score";
-import Start from "./components/Start";
-import NavBar from "./components/NavBar";
-
+// import {image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12} from "./picturecards";
 
 import picturecards from "./picturecards";
-// import images from "../public/imgs";
+import PictureFrame from "./components/PictureFrame";
 
-// images;
+import Score from "./components/Score";
+import Start from "./components/Start";
+import Title from "./components/Title";
+
+
+
+
 class App extends Component {
 
   state = {
+
+    // picturecards: [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12],
     picturecards: picturecards,
-    pickedChars: [],
+    // name:
+    pickedChars: [picturecards].sort(this.shuffleArray),
     topScore: 0,
+    Score: 0,
+    alertWon: false,
+    correct: undefined,
     alertMessage: ""
   }
 
-  handlePicked(event){
-    console.log(event)
-    const name = event.target.getAttribute("./");
-    this.shufflePicturecards()
+  shuffleArray = (a, b) => Math.random() > .5 ? -1 : 1
 
-    this.checkGuess( name,this.updateTopScore)
+  handlePicked = (event) => {
+//getNamedItem method returns the attribute node with the specified name from the current attributes collection
+    const name = event.target.attributes.getNamedItem("name").value;
+    this.checkClickPicture((name).updateTopScore);
+    this.shufflePicturecards()
   }
 
   shufflePicturecards = () => {
-    this.setState({picturecards: this.shuffleArray(this.state.picturecards)})
+    this.setState(
+      {
+        picturecards: this.shuffleArray(this.state.pickedChars)
+      }
+      )
     
   }
 
-  shuffleArray = (a) => {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random() * (i + 1));
-      x = a[i];
-      a[i] = a[j];
-      a[j] = x;
-    }
-    return a;
-  }
+  
 
-  checkGuess = (name, cb) => {
-    const newState = { ...this.state };
-    if (newState.pickedChars.includes(name)) {
-      newState.alertMessage = `you picked ${ name } a 2nd time!`
+  checkClickPicture = (name) => {
+   const newState = { ...this.state };
+   console.log(name);
+    
+    if (newState.clicked.indexOf(name) === -1) {
+      // score = newState.clicked.length +1,
+      newState.alertMessage = `you picked "${name}" a 2nd time!`
       newState.pickedChars = []
-      this.setState(newState)
     } else {
       newState.pickedChars.push(name)
       newState.alertMessage = `Keep going!`
-      this.setState(newState)
+    
+      newState.alertMessage = `something weird happened, try again`
     }
-    cb(newState, this.alertWon)
+    // console.log(name)
   }
+  
 
   updateTopScore = (newState, cb) => {
     if (newState.pickedChars.length > newState.topScore) {
       newState.topScore++
-      this.setState(newState)
+      newState()
     }
     cb(newState)
   }
@@ -71,7 +79,7 @@ class App extends Component {
     if (newState.pickedChars.length === 12) {
       newState.alertMessage = "you won";
       newState.pickedChars = [];
-      this.setState(newState)
+      this.setState(this.state = newState)
     }
   }
 
@@ -83,7 +91,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar style={{ background: "rebeccapurple", marginBottom: "300px" }} />
+        <Title style= {{ background: "rebeccapurple", marginBottom: "300px" }} />
 
         <ColumnGrid container direction="column" style={{ margin: "auto auto", maxWidth: 1200 }}>
 
@@ -123,7 +131,7 @@ class App extends Component {
               name={char.name}
               image={char.image}
               key={char.id}
-              handlePicked={(e) => this.handlePicked(e)}
+              handlePicked={this.handlePicked}
             />
             </ColumnGrid>
           ))}

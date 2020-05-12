@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const NavBar = props => {
+const Title = props => {
     return(
         <div>
         <h1>
@@ -13,4 +13,4 @@ const NavBar = props => {
         </div>
     )
 }
-export default NavBar;
+export default Title;
